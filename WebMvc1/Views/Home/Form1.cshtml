@@ -1,5 +1,8 @@
 ﻿@model WebMvc1.Models.FormModel
+
 @{
+    var DateTimeNow = (DateTime.Now - Model.Dateofbirth).Days;
+    
     ViewData["Title"] = "Form1";
 }
 
@@ -7,11 +10,13 @@
     <h1 class="display-4">Dane z formularza</h1>
     @Html.DisplayNameFor(model => model.Name):          @Html.DisplayFor(model => model.Name)
     <br />
-    @Html.DisplayNameFor(model => model.Description):   @Html.DisplayFor(model => model.Description)
+    @Html.DisplayNameFor(model => model.Dateofbirth):   @Html.DisplayFor(model => model.Dateofbirth)
     <br />
-    @Html.DisplayNameFor(model => model.IsVisible):     @Html.DisplayFor(model => model.IsVisible)
+    Ilosc dni od urodzenia: @DateTimeNow
+    </br>
+
 </div>
 <br/>
 <a href="/form1.html">Powrót do Form1 (HTML)</a>
 <br />
-<a asp-action="Form2">Powrót do Form2 (Razor)</a>
+
