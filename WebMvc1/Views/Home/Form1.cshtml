@@ -2,7 +2,7 @@
 
 @{
     var DateTimeNow = (DateTime.Now - Model.Dateofbirth).Days;
-    
+    var dateOnly = (Model.Dateofbirth.ToShortDateString());
     ViewData["Title"] = "Form1";
 }
 
@@ -10,10 +10,11 @@
     <h1 class="display-4">Dane z formularza</h1>
     @Html.DisplayNameFor(model => model.Name):          @Html.DisplayFor(model => model.Name)
     <br />
-    @Html.DisplayNameFor(model => model.Dateofbirth):   @Html.DisplayFor(model => model.Dateofbirth)
+    @Html.DisplayNameFor(model => model.Dateofbirth):   @dateOnly
     <br />
     Ilosc dni od urodzenia: @DateTimeNow
     </br>
+   
 
 </div>
 <br/>
